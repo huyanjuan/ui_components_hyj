@@ -33,16 +33,16 @@
     "singleQuote": true,
     "trailingComma": "es5"
   },
-  "name": "mylib",
+  "name": "ui_components_hyj",
   "author": "胡闫娟",
-  "module": "dist/mylib.esm.js",
+  "module": "dist/ui_components_hyj.esm.js",
   "size-limit": [
     {
-      "path": "dist/mylib.cjs.production.min.js",
+      "path": "dist/ui_components_hyj.cjs.production.min.js",
       "limit": "10 KB"
     },
     {
-      "path": "dist/mylib.esm.js",
+      "path": "dist/ui_components_hyj.esm.js",
       "limit": "10 KB"
     }
   ],

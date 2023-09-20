@@ -158,3 +158,9 @@ Change the `alias` to point to where those packages are actually installed. This
 ```
 
 An alternative to fixing this problem would be to remove aliases altogether and define the dependencies referenced as aliases as dev dependencies instead. [However, that might cause other problems.](https://github.com/palmerhq/tsdx/issues/64)
+
+运行步骤：
+1、在根目录下运行 yarn start，然后在 example 下运行 yarn start
+2、src 下是封装的各个组件，example 下引用开发的组件可以预览效果
+3、封装完成后在根目录下运行 yarn build 打包提交代码
+4、在根目录下运行 npm pulish 推送到 npm 上
