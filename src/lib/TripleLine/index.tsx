@@ -9,6 +9,7 @@ interface ChartProps {
   dataList: any;
   legendList: any;
   length?: any;
+  carousel?: boolean;
 }
 const TripleLine: React.FC<ChartProps> = ({
   id,
@@ -17,6 +18,7 @@ const TripleLine: React.FC<ChartProps> = ({
   dataList,
   legendList,
   length,
+  carousel,
 }) => {
   const initLineChart = () => {
     const chartDom: any = document.getElementById(`${id}_chart`);
@@ -189,7 +191,7 @@ const TripleLine: React.FC<ChartProps> = ({
         ],
       };
       option && myChart.setOption(option, true);
-      getChartTooltip(myChart, dataList);
+      carousel && getChartTooltip(myChart, dataList);
 
       setTimeout(function() {
         window.addEventListener('resize', function() {

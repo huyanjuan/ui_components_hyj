@@ -12,6 +12,7 @@ interface ChartProps {
   endNumber?: any;
   length?: any;
   selectType?: any;
+  carousel?: boolean;
 }
 const Line: React.FC<ChartProps> = ({
   id,
@@ -23,8 +24,8 @@ const Line: React.FC<ChartProps> = ({
   endNumber,
   length,
   selectType,
+  carousel,
 }) => {
-  console.log(selectType, 'selectType', endNumber);
   const initLineChart = () => {
     const chartDom: any = document.getElementById(`${id}_chart`);
 
@@ -200,19 +201,7 @@ const Line: React.FC<ChartProps> = ({
         };
       }
       option && myChart.setOption(option, true);
-      getChartTooltip(myChart, dataList);
-      // let index = 0; //播放所在下标
-      // setInterval(function () {
-      //   myChart.dispatchAction({
-      //     type: 'showTip',
-      //     seriesIndex: 0,
-      //     dataIndex: index,
-      //   });
-      //   index++;
-      //   if (index > dataList?.length) {
-      //     index = 0;
-      //   }
-      // }, 3000);
+      carousel && getChartTooltip(myChart, dataList);
       setTimeout(function() {
         window.addEventListener('resize', function() {
           myChart.resize();

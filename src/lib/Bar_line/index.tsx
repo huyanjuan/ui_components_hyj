@@ -15,6 +15,7 @@ interface ChartProps {
   dataList: any;
   legendList: any;
   word?: number;
+  carousel?: boolean;
 }
 const Bar_line: React.FC<ChartProps> = ({
   id,
@@ -23,6 +24,7 @@ const Bar_line: React.FC<ChartProps> = ({
   dataList,
   legendList,
   word,
+  carousel,
 }) => {
   const initLineChart = () => {
     const chartDom: any = document.getElementById(`${id}_chart`);
@@ -166,10 +168,6 @@ const Bar_line: React.FC<ChartProps> = ({
             type: 'bar',
             barWidth: fontSize(14),
             itemStyle: {
-              // color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-              //   { offset: 0, color: '#158FFF' },
-              //   { offset: 1, color: 'rgba(21, 143, 255, 0) ' },
-              // ]),
               color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
                 { offset: 0, color: '#66E1DF' },
                 { offset: 1, color: 'rgba(0, 89, 84, 0.00)' },
@@ -207,7 +205,7 @@ const Bar_line: React.FC<ChartProps> = ({
       //     index = 0;
       //   }
       // }, 3000);
-      getChartTooltip(myChart, dataList);
+      carousel && getChartTooltip(myChart, dataList);
       setTimeout(function() {
         window.addEventListener('resize', function() {
           myChart.resize();
